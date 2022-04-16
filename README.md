@@ -1,1 +1,1 @@
-"# Web_project_DAB" 
+Powered by Daniyar, Adil' and Bekzat.
