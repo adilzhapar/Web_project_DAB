@@ -1,0 +1,12 @@
+<div class="row">
+    <button (click)="show_portfolio()" class="col-3 btn btn-success ms-3">Portfolio</button>
+    <button class="col-3 btn btn-warning ms-3">Blogs</button>
+</div>
+<div class="row">
+    <div *ngIf="flag == false" class="portfolio">
+        <app-portfolio-details></app-portfolio-details>
+    </div>
+    <div *ngIf="flag == true" class="blogs">
+        <app-blogs></app-blogs>
+    </div>
+</div>

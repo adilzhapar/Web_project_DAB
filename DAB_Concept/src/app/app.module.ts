@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,6 +11,13 @@ import { PortAdilComponent } from './port-adil/port-adil.component';
 import { PortBekaComponent } from './port-beka/port-beka.component';
 import { PortDanComponent } from './port-dan/port-dan.component';
 import { HomeComponent } from './home/home.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { MainbarComponent } from './mainbar/mainbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { BlogComponent } from './blog/blog.component';
+import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,14 @@ import { HomeComponent } from './home/home.component';
     PortAdilComponent,
     PortBekaComponent,
     PortDanComponent,
-    HomeComponent
+    HomeComponent,
+    HomePageComponent,
+    SidebarComponent,
+    MainbarComponent,
+    FooterComponent,
+    BlogComponent,
+    PortfolioDetailsComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -33,23 +46,3 @@ import { HomeComponent } from './home/home.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-=======
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
->>>>>>> 5fba9ab793fce960c3c0fce63384a2d916410534
