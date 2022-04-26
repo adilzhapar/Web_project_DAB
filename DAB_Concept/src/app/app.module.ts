@@ -18,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BlogComponent } from './blog/blog.component';
 import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 import { AuthComponent } from './auth/auth.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AuthComponent } from './auth/auth.component';
     FooterComponent,
     BlogComponent,
     PortfolioDetailsComponent,
-    AuthComponent
+    AuthComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,

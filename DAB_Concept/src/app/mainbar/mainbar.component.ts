@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainbarComponent implements OnInit {
 
-  flag: boolean = false;
+  flag: string = "portfolio";
 
   constructor() { }
 
@@ -15,11 +15,15 @@ export class MainbarComponent implements OnInit {
   }
 
   show_portfolio() {
-    this.flag = false;
+    this.flag = "portfolio";
   }
 
-  show_blog() {
-    this.flag = true;
+  show_blogs() {
+    this.flag = "blogs";
+  }
+
+  show_admin_panel() {
+    this.flag = "admin";
   }
 
 }
