@@ -25,7 +25,6 @@ SECRET_KEY = 'django-insecure-%+8=zg)_*d2d99#%q!60-*w!m4oz+5_oyjl=4))u$z)b(wsw+7
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
@@ -47,13 +46,15 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware'
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'back.urls'
 
@@ -81,8 +82,8 @@ WSGI_APPLICATION = 'back.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'DAB',
-        'USER': 'DAB_user',
+        'NAME': 'dab',
+        'USER': 'dab_user',
         'PASSWORD': 'qwerty12345',
         'HOST': 'localhost',
         'PORT': '5432',
