@@ -13,7 +13,7 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<AuthToken> {
-    return this.http.post<AuthToken>(`${this.BASE_URL}/auth/login/`, {
+    return this.http.post<AuthToken>(`${this.BASE_URL}/api/login/`, {
       username,
       password
     });
