@@ -20,6 +20,10 @@ import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details
 import { AuthComponent } from './auth/auth.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AuthInterceptor } from './AuthInterceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,9 +46,17 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
