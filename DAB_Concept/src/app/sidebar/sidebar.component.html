@@ -1,9 +1,10 @@
 <div class="row pt-4">
-    <div class="card" style="width: 25rem; margin: 0 auto;">
-        <img class="card-img-top" src="../../assets/hacker.png" alt="Card image cap">
+    <div class="card" style="width: 25rem; margin: 0 auto; padding-left: 20px; padding-right: 20px; padding-top: 20px;">
+        <img class="card-img-top" src="{{memberInfo.member.photo}}" alt="Card image cap">
         <div class="card-body">
+            <h1><strong>{{memberInfo.member.first_name}} {{memberInfo.member.last_name}}</strong></h1>
             <p class="card-text">
-                Here will be short info about <strong>{{member}}</strong> and profile photo!
+                {{memberInfo.member.brief_info}}
             </p>
         </div>
     </div>

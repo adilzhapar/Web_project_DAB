@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Member, Project} from "../models";
+import {DataService} from "../data.service";
 
 @Component({
   selector: 'app-about-us',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
-  constructor() { }
+  membersInfo: Member[] = [];
+  projects: Project[] = [];
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.getMembersInfo();
+    this.getProjects();
   }
 
   scrollUp() {
@@ -20,4 +27,19 @@ export class AboutUsComponent implements OnInit {
     });
   }
 
+  getMembersInfo() {
+    this.dataService.getMembersInfo().subscribe(data => {
+      this.membersInfo = data;
+    });
+  }
+
+  getProjects() {
+    this.dataService.getProjects().subscribe(data => {
+      this.projects = data;
+    });
+  }
+
+  redirect(url: string) {
+    window.location.href = url;
+  }
 }

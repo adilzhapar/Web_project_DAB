@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Project(models.Model):
     photo = models.URLField()
     title = models.CharField(max_length=255)
@@ -35,7 +36,7 @@ class Member(models.Model):
 
 
 class MemberInfo(models.Model):
-    member = models.ForeignKey(Member, on_delete=models.CASCADE, null=True)
+    member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True)
     email = models.CharField(max_length=255)
     about = models.TextField()
     education = models.TextField()

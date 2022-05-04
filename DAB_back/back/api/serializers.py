@@ -26,12 +26,18 @@ class MemberSerializer(serializers.Serializer):
         return member
 
 
-class MemberInfoSerializer(serializers.ModelSerializer):
-    member = MemberSerializer(read_only=True)
+# for testing purposes
+# class MemberSerializer2(serializers.ModelSerializer): #
+#     class Meta:
+#         model = Member
+#         fields = ('id', 'first_name', 'last_name', 'photo', 'brief_info')
 
+
+class MemberInfoSerializer(serializers.ModelSerializer):
+    member = MemberSerializer()
     class Meta:
         model = MemberInfo
-        fields = ('id', 'email', 'about', 
+        fields = ('id', 'member', 'email', 'about', 
         'education', 'skills', 'hobbies', 'github', 'tg')
 
 

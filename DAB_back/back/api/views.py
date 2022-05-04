@@ -39,11 +39,18 @@ def members_list(request):
 
 
 
-class MemberInfoView(APIView):
-    def get(self, request):
-        informations = MemberInfo.objects.all()
-        serializer = MemberInfoSerializer(informations, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+class MemberInfoAPIView(APIView):
+
+    def get_object(self, pk):
+        try:
+            return MemberInfo.objects.get(id=pk)
+        except Exception:
+            return Response({'message': 'an error occurred'});
+
+    def get(self, request, pk=None):
+        memberInfo = self.get_object(pk)
+        serializer = MemberInfoSerializer(memberInfo)
+        return Response(serializer.data)
 
 
 
